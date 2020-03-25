@@ -1,26 +1,10 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-  
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
-        </div>
-  
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-
-      </div>
-  
-      <div class="redirectToLogin">
-        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-      </div>
-  
-    </div>
-  </div>
+<form class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" #userName required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" #userPassword required>
+  <input type="button" class="btn btn-lg btn-success btn-block" value="Log in"
+    (click)="authService.SignIn(userName.value, userPassword.value)">
+  <button class="btn btn-lg btn-primary btn-block" routerLink="/register-user" type="submit">Sign Up</button>
+</form>
